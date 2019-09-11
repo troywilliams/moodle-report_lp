@@ -1,0 +1,58 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{#initialised}}
+    <div class="row">
+        <div class="col-3"></div>
+        <div id="sortable-item-list1-{{uniqid}}" class="col-9">
+            {{#root}}
+                <div class="list-group-item header">
+                    {{label}}
+                    <div class="float-right">
+                        <span class="badge badge-primary badge-pill">{{#userdate}} {{coursestartdate}}, %B %Y {{/userdate}} </span>
+                    </div>
+                </div>
+            {{/root}}
+            <div data-list="children">
+                {{#children}}
+                    <div data-child-id="{{id}}">
+                        <div class="list-group-item grouping">
+                            <span class="move-child">{{> core/drag_handle}}</span>
+                            {{label}}
+                        </div>
+                        <div data-list="grand-children">
+                            {{#grandchildren}}
+                                <div data-grand-child-id="{{id}}" class="list-group-item">
+                                    <span class="move-grand-child ml-4">{{> core/drag_handle}}</span>
+                                    {{label}}
+                                </div>
+                            {{/grandchildren}}
+                        </div>
+                    </div>
+                {{/children}}
+            </div>
+        </div>
+    </div>
+{{/initialised}}
+{{#js}}
+    require(
+    [
+    'report_lp/item_configuration_tree'
+    ],
+    function(itemConfigurationTree) {
+        itemConfigurationTree.init('#sortable-item-list-{{uniqid}}');
+    });
+{{/js}}

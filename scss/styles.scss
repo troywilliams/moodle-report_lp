@@ -43,6 +43,10 @@ $lw-green: #96C832;
         background-color: $lw-black;
         color: $lw-white;
     }
+    &.grouping {
+        background-color: lighten($lw-black, 25);
+        color: $lw-white;
+    }
     .fa-toggle-on {
         color: #8EBA33;
     }

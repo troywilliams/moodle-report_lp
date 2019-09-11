@@ -117,6 +117,10 @@
   background-color: #333333;
   color: #FFFFFF;
 }
+.list-group-item.grouping {
+  background-color: #737373;
+  color: #FFFFFF;
+}
 .list-group-item .fa-toggle-on {
   color: #8EBA33;
 }
@@ -133,15 +137,13 @@ table.report-lp-summary-report td {
 }
 
 table.report-lp-summary-report tbody tr.highlighted {
-  background-color: #fefbdc;
+  background-color: #FEFBDC;
 }
-
 table.report-lp-summary-report tbody tr.highlighted td:first-child {
-  background-color: #fefbdc;
+  background: #FEFBDC;
 }
-
 table.report-lp-summary-report tbody tr td:first-child {
-  background: #fff;
+  background: #FFFFFF;
   position: sticky;
   left: -1.25rem;
   box-shadow: inset -12px 0 2px -11px rgba(0, 0, 0, 0.5);
